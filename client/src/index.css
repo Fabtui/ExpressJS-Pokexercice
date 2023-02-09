@@ -1,0 +1,224 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  padding: 10vh;
+}
+
+h1 {
+  color: red;
+}
+
+.poison {
+  width: fit-content;
+  background-color: rgb(152, 24, 146);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.grass {
+  width: fit-content;
+  background-color: rgb(24, 243, 24);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.fire {
+  width: fit-content;
+  background-color: rgb(243, 159, 24);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+
+.flying {
+  width: fit-content;
+  background-color: rgb(100, 87, 246);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+
+.water {
+  width: fit-content;
+  background-color: rgb(87, 153, 246);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.bug {
+  width: fit-content;
+  background-color: rgb(188, 246, 87);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.normal {
+  width: fit-content;
+  background-color: rgb(142, 128, 101);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.fairy {
+  width: fit-content;
+  background-color: rgb(245, 161, 229);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.psychic {
+  width: fit-content;
+  background-color: rgb(246, 87, 151);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.fighting {
+  width: fit-content;
+  background-color: rgb(255, 0, 0);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.electric {
+  width: fit-content;
+  background-color: rgb(240, 233, 23);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.ground {
+  width: fit-content;
+  background-color: rgb(213, 181, 50);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.rock {
+  width: fit-content;
+  background-color: rgb(122, 104, 72);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.steel {
+  width: fit-content;
+  background-color: rgb(143, 143, 143);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.ice {
+  width: fit-content;
+  background-color: rgb(101, 242, 239);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.ghost {
+  width: fit-content;
+  background-color: rgb(100, 75, 100);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.dragon {
+  width: fit-content;
+  background-color: rgb(96, 0, 144);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.dark {
+  width: fit-content;
+  background-color: rgb(95, 78, 65);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.poke-types {
+  display: flex;
+}
+
+.poke-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.poke-card {
+  background-color: rgba(244, 244, 244, 0.789);
+  border-radius: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.151);
+  padding: 8px 12px;
+  margin: 8px;
+}
+
+.poke-card img {
+  max-width: 12vw;
+}
