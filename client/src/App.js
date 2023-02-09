@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { PokeCard } from './components/PokeCard'
 import { TypesCards } from './components/TypesCards'
-import './index.css'
+import './style/index.css'
+import './style/types.css'
 
 function App() {
 
@@ -22,24 +23,31 @@ function App() {
   }
 
   const handleTypeClick = (type) => {
-    const limit = document.querySelector('#limit').value || 3000
-    fetch(`http://localhost:5000/api/pokemons?type=${type}&limit=${limit}`)
-    .then(res => res.json())
-    .then(data => {setBackendData(data)})
+    if (type === "X") {
+      const limit = document.querySelector('#limit').value || 3000
+      fetch(`http://localhost:5000/api/pokemons?limit=${limit}`)
+      .then(res => res.json())
+      .then(data => {setBackendData(data)})
+    } else {
+      const limit = document.querySelector('#limit').value || 3000
+      fetch(`http://localhost:5000/api/pokemons?type=${type}&limit=${limit}`)
+      .then(res => res.json())
+      .then(data => {setBackendData(data)})
+    }
   }
 
   return (
     <div className='App'>
-    <h1>Home</h1>
+    <h1>Pokéshlag</h1>
       <p>Search</p>
-      <input onChange={handleChange} type="text" id="fname" name="fname" placeholder='Pikachu'/>
+      <input onChange={handleChange} type="text" id="fname" name="fname" placeholder='name: Pikachu'/>
       <input id="limit" type='number' min="1" placeholder='100'/>
       <TypesCards handleTypeClick={handleTypeClick}/>
       {( typeof backendData.data === 'undefined') ? (
-        <p>Loading</p> 
+        <p>Loading...</p> 
       ): (
         <div className='poke-cards'>
-          {backendData.data.slice(0, 200).map((data, i) => (
+          {backendData.data.slice(0, 3000).map((data, i) => (
             <PokeCard key={i} data={data} i={i}/>
             )
           )}
