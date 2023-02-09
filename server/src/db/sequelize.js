@@ -33,7 +33,8 @@ const initDb = () => {
           picture: pokemon.picture,
           types: pokemon.types,
          }
-      ).then(pokemon => console.log('db initialized'))
+      )
+      // .then(pokemon => console.log('db initialized'))
     })
 
     bcryp.hash('a', 10)

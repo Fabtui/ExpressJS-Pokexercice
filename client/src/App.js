@@ -21,8 +21,11 @@ function App() {
     .then(data => {setBackendData(data)})
   }
 
-  const handleTypeClick = (e) => {
-    console.log(e);
+  const handleTypeClick = (type) => {
+    const limit = document.querySelector('#limit').value || 3000
+    fetch(`http://localhost:5000/api/pokemons?type=${type}&limit=${limit}`)
+    .then(res => res.json())
+    .then(data => {setBackendData(data)})
   }
 
   return (
