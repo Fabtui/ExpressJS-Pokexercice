@@ -1,0 +1,95 @@
+.type-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.type-cards>*:hover {
+  cursor: pointer;
+}
+
+.poison-type {
+  background-color: rgb(152, 24, 146);
+}
+
+.grass-type {
+  background-color: rgb(24, 243, 24);
+}
+
+.fire-type {
+  background-color: rgb(243, 159, 24);
+}
+
+
+.flying-type {
+  background-color: rgb(100, 87, 246);
+}
+
+
+.water-type {
+  background-color: rgb(87, 153, 246);
+}
+
+.bug-type {
+  background-color: rgb(188, 246, 87);
+}
+
+.normal-type {
+  background-color: rgb(142, 128, 101);
+}
+
+.fairy-type {
+  background-color: rgb(245, 161, 229);
+}
+
+.psychic-type {
+  background-color: rgb(246, 87, 151);
+}
+
+.fighting-type {
+  background-color: rgb(255, 0, 0);
+}
+
+.electric-type {
+  background-color: rgb(240, 233, 23);
+}
+
+.ground-type {
+  background-color: rgb(213, 181, 50);
+}
+
+.rock-type {
+  background-color: rgb(122, 104, 72);
+}
+
+.steel-type {
+  background-color: rgb(143, 143, 143);
+}
+
+.ice-type {
+  background-color: rgb(101, 242, 239);
+}
+
+.ghost-type {
+  background-color: rgb(100, 75, 100);
+}
+
+.dragon-type {
+  background-color: rgb(96, 0, 144);
+}
+
+.dark-type {
+  background-color: rgb(95, 78, 65);
+}
+
+.type-label {
+  width: fit-content;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
+.remove-type {
+  background-color: rgb(0, 0, 0);
+}

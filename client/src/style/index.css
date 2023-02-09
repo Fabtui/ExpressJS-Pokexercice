@@ -1,0 +1,59 @@
+import 
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: 'Pokefont';
+  src: local('Pokefont'), url(../../public/Pokemon\ Solid.ttf) format('truetype');
+}
+
+.App {
+  padding: 2vh 10vh;
+}
+
+h1 {
+  font-family: 'Pokefont';
+  font-size: 40px;
+}
+
+.poke-types {
+  display: flex;
+}
+
+.poke-cards {
+  margin: 32px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.poke-card:hover {
+  transform: scale(1.4);
+  cursor: pointer;
+}
+
+.poke-card {
+  background-color: rgba(244, 244, 244, 0.789);
+  border-radius: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.151);
+  padding: 8px 12px;
+  margin: 8px;
+  max-width: 149px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.poke-card img {
+  max-width: 150px;
+}
