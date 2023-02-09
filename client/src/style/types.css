@@ -1,3 +1,11 @@
+.type-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.type-cards>*:hover {
+  cursor: pointer;
+}
 
 .poison-type {
   background-color: rgb(152, 24, 146);

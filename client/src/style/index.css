@@ -57,11 +57,3 @@ h1 {
 .poke-card img {
   max-width: 150px;
 }
-
-.type-cards {
-  display: flex;
-}
-
-.type-cards>*:hover {
-  cursor: pointer;
-}

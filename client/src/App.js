@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { PokeCard } from './components/PokeCard'
 import { TypesCards } from './components/TypesCards'
+
 import './style/index.css'
 import './style/types.css'
 
@@ -37,25 +38,24 @@ function App() {
   }
 
   return (
-    <div className='App'>
-    <h1>Pokéshlag</h1>
-      <p>Search</p>
-      <input onChange={handleChange} type="text" id="fname" name="fname" placeholder='name: Pikachu'/>
-      <input id="limit" type='number' min="1" placeholder='100'/>
-      <TypesCards handleTypeClick={handleTypeClick}/>
-      {( typeof backendData.data === 'undefined') ? (
-        <p>Loading...</p> 
-      ): (
-        <div className='poke-cards'>
-          {backendData.data.slice(0, 3000).map((data, i) => (
-            <PokeCard key={i} data={data} i={i}/>
-            )
-          )}
-        </div>
-      )}
-    
-    </div>
-  )
+      <div className='App'>
+      <h1>Pokéshlag</h1>
+        <p>Search</p>
+        <input onChange={handleChange} type="text" id="fname" name="fname" placeholder='name: Pikachu'/>
+        <input id="limit" type='number' min="1" placeholder='100'/>
+        <TypesCards handleTypeClick={handleTypeClick}/>
+        {( typeof backendData.data === 'undefined') ? (
+          <p>Loading...</p> 
+        ): (
+          <div className='poke-cards'>
+            {backendData.data.slice(0, 3000).map((data, i) => (
+              <PokeCard key={i} data={data} i={i}/>
+              )
+            )}
+          </div>
+        )}
+      </div>
+    )
 }
 
 export default App
