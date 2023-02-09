@@ -3,6 +3,24 @@ const { Op } = require('sequelize')
 
 module.exports = (app) => {
   app.get('/api/pokemons', (req, res) => {
+    if (req.query.type) {
+      console.log(req.query);
+      const limit = parseInt(req.query.limit) || 100
+      const type = req.query.type
+
+      return Pokemon.findAndCountAll({
+        where: {
+          types: { [Op.like]: `%${type}%` } // advanced sequelize db search
+        },
+        order: ['id'],
+        limit: limit
+      })
+      .then(({count, rows}) => {
+        const message = `${count} pokemons found for search: ${type}`
+        res.json({message, data: rows})
+      })
+    }
+
     if (req.query.name) {
       const limit = parseInt(req.query.limit) || 100
       const name = req.query.name
