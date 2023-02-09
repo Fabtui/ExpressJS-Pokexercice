@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { PokeCard } from './components/PokeCard'
+import { TypesCards } from './components/TypesCards'
 import './index.css'
 
 function App() {
@@ -20,12 +21,17 @@ function App() {
     .then(data => {setBackendData(data)})
   }
 
+  const handleTypeClick = (e) => {
+    console.log(e);
+  }
+
   return (
     <div className='App'>
     <h1>Home</h1>
       <p>Search</p>
       <input onChange={handleChange} type="text" id="fname" name="fname" placeholder='Pikachu'/>
       <input id="limit" type='number' min="1" placeholder='100'/>
+      <TypesCards handleTypeClick={handleTypeClick}/>
       {( typeof backendData.data === 'undefined') ? (
         <p>Loading</p> 
       ): (

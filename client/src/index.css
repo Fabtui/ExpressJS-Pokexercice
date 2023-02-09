@@ -202,6 +202,16 @@ h1 {
   text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
 }
 
+.dark {
+  width: fit-content;
+  background-color: rgb(95, 78, 65);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  margin: 4px;
+  color: white;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.401);
+}
+
 .poke-types {
   display: flex;
 }
@@ -220,5 +230,13 @@ h1 {
 }
 
 .poke-card img {
-  max-width: 12vw;
+  max-width: 150px;
+}
+
+.type-cards {
+  display: flex;
+}
+
+.type-cards>*:hover {
+  cursor: pointer;
 }
