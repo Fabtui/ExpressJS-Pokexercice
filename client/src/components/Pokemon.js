@@ -1,46 +1,29 @@
 import React from "react";
 
 export class Pokemon extends React.Component {
-
-  // useEffect(() => {
-
-  //   fetch('http://localhost:5000/api/pokemons')
-  //     .then(res => res.json())
-  //     .then(data => {setBackendData(data)})
-  // }, [])
-
-  // const handleChange = (e) => {
-  //   const limit = document.querySelector('#limit').value || 3000
-  //   fetch(`http://localhost:5000/api/pokemons?name=${e.currentTarget.value}&limit=${limit}`)
-  //   .then(res => res.json())
-  //   .then(data => {setBackendData(data)})
-  // }
-
-  // const handleTypeClick = (type) => {
-  //   if (type === "X") {
-  //     const limit = document.querySelector('#limit').value || 3000
-  //     fetch(`http://localhost:5000/api/pokemons?limit=${limit}`)
-  //     .then(res => res.json())
-  //     .then(data => {setBackendData(data)})
-  //   } else {
-  //     const limit = document.querySelector('#limit').value || 3000
-  //     fetch(`http://localhost:5000/api/pokemons?type=${type}&limit=${limit}`)
-  //     .then(res => res.json())
-  //     .then(data => {setBackendData(data)})
-  //   }
-  // }
-
+  constructor(props) {
+    super(props)
+    this.state = {
+      pokemon: null
+    }
+  }
 
   componentWillMount() {
     fetch(`http://localhost:5000/api/pokemons/${this.props.id}`)
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => this.setState({pokemon: data.data}))
   }
 
   render() {
+    const pokemon = this.state.pokemon ? this.state.pokemon : null
     return (
             <div className="pokemon-show">
-              <p>pokemon {this.props.id}</p>
+              {( this.state.pokemon === null ) ? (
+                  <p>Loading...</p> 
+                ): (
+                  <p>pokemon : {this.state.pokemon.name}</p>
+                )
+              }
             </div>
     );
   }
