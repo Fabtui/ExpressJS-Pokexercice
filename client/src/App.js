@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link  } from 'react-router-dom'
 import { PokeCard } from './components/PokeCard'
 import { TypesCards } from './components/TypesCards'
 
@@ -6,7 +7,6 @@ import './style/index.css'
 import './style/types.css'
 
 function App() {
-
   const [backendData, setBackendData] = useState([{}])
 
   useEffect(() => {
@@ -49,7 +49,9 @@ function App() {
         ): (
           <div className='poke-cards'>
             {backendData.data.slice(0, 3000).map((data, i) => (
-              <PokeCard key={i} data={data} i={i}/>
+              <Link key={i} to={`pokemon/${data.id}`}>
+                <PokeCard key={i} data={data} i={i}/>
+              </Link>
               )
             )}
           </div>

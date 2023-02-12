@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './style/index.css';
 import App from './App';
 import { TypesCards } from './components/TypesCards'
+import { PokemonLink } from './components/PokemonLink'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
@@ -11,7 +12,8 @@ root.render(
   <Router>
     <Routes>
       <Route path="/"  element={<App />} />
-      <Route path="/test"  element={<TypesCards />} />
+      <Route path="/test" element={<TypesCards />} />
+      <Route path="/pokemon/:Id" element={<PokemonLink />} />
     </Routes>
   </Router>
 );
