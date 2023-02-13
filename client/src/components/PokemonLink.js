@@ -5,7 +5,6 @@ import { Pokemon } from './Pokemon'
 export function PokemonLink()  {
 
     const params = useParams()
-    console.log(params.Id)
     return (
             <div className="pokemon-show">
               <Pokemon id={params.Id}/>
