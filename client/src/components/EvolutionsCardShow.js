@@ -11,19 +11,19 @@ export class EvolutionsCarShow extends React.Component {
   showEvolve(chain) {
     let data = []
     if (chain.species) {
-      const url = chain.species.url;
+      const url = chain.species.url.replace('https://pokeapi.co/api/v2/pokemon-species/', '/pokemon');
       data.push({name: chain.species.name, url: url})
     }
     if (chain.evolves_to[0]) {
-      const url = chain.evolves_to[0].species.url;
+      const url = chain.evolves_to[0].species.url.replace('https://pokeapi.co/api/v2/pokemon-species', '/pokemon');
       data.push({name: chain.evolves_to[0].species.name, url: url})
 
       if (chain.evolves_to[0].evolves_to[0]) {
-        const url = chain.evolves_to[0].evolves_to[0].species.url;
+        const url = chain.evolves_to[0].evolves_to[0].species.url.replace('https://pokeapi.co/api/v2/pokemon-species', '/pokemon');
         data.push({name: chain.evolves_to[0].evolves_to[0].species.name, url: url})
 
         if (chain.evolves_to[0].evolves_to[0].evolves_to[0]) {
-          const url = chain.evolves_to[0].evolves_to[0].evolves_to[0].species.url;
+          const url = chain.evolves_to[0].evolves_to[0].evolves_to[0].species.url.replace('https://pokeapi.co/api/v2/pokemon-species', '/pokemon');
           data.push({name: chain.evolves_to[0].evolves_to[0].evolves_to[0].species.name, url: url})
         }
       }
@@ -38,7 +38,13 @@ export class EvolutionsCarShow extends React.Component {
     return (
             <div className="evolutions-card-show" >
             <h4>Evolutions: </h4>
-              {evolutionPokemons.map(evo => evo.name).join(' => ')}
+            <ul>
+              {evolutionPokemons.map(evo => 
+              <li>
+                <a href={evo.url}>{evo.name}</a>
+              </li>
+              )}
+            </ul>
             </div>
     );
   }
