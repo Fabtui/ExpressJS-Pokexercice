@@ -1,22 +1,33 @@
 import React from "react";
 
 export class EvolutionsCarShow extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      pokemons: []
+    }
+  }
 
   showEvolve(chain) {
     let data = []
     if (chain.species) {
-      data.push(chain.species.name)
-      console.log(chain.species.url);
+      const url = chain.species.url;
+      data.push({name: chain.species.name, url: url})
     }
     if (chain.evolves_to[0]) {
-      data.push(chain.evolves_to[0].species.name)
+      const url = chain.evolves_to[0].species.url;
+      data.push({name: chain.evolves_to[0].species.name, url: url})
+
       if (chain.evolves_to[0].evolves_to[0]) {
-        data.push(chain.evolves_to[0].evolves_to[0].species.name)
+        const url = chain.evolves_to[0].evolves_to[0].species.url;
+        data.push({name: chain.evolves_to[0].evolves_to[0].species.name, url: url})
+
         if (chain.evolves_to[0].evolves_to[0].evolves_to[0]) {
-          data.push(chain.evolves_to[0].evolves_to[0].evolves_to[0].species.name)
+          const url = chain.evolves_to[0].evolves_to[0].evolves_to[0].species.url;
+          data.push({name: chain.evolves_to[0].evolves_to[0].evolves_to[0].species.name, url: url})
         }
       }
-    }
+    } 
     return data
   }
 
@@ -27,7 +38,7 @@ export class EvolutionsCarShow extends React.Component {
     return (
             <div className="evolutions-card-show" >
             <h4>Evolutions: </h4>
-              {evolutionPokemons.join(' => ')}
+              {evolutionPokemons.map(evo => evo.name).join(' => ')}
             </div>
     );
   }
