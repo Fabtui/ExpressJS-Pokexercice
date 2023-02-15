@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Pokemon } from './Pokemon'
+import { Pokemon } from '../containers/Pokemon'
 
 export function PokemonLink()  {
 
