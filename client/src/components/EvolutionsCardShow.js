@@ -57,14 +57,16 @@ export class EvolutionsCarShow extends React.Component {
             {( pokemons.length != this.state.ids.length ) ? (
               <p>Loading...</p> 
             ): (
-              <ul>
-                {pokemons.map(evo => 
-                <li key={evo.id}>
-                  <a>{evo.name}</a>
-                  <img src={evo.picture}/>
-                </li>
+              <div className="evo-chain-container">
+                {pokemons.map(evo =>
+                <a href={`/pokemon/${evo.id}`}>
+                  <div className="evo-chain-card" key={evo.id}>
+                    <p>{evo.name}</p>
+                    <img src={evo.picture}/>
+                  </div>
+                </a>
                 )}
-              </ul>
+              </div>
             )}
 
             </div>
