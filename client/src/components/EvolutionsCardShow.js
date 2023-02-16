@@ -16,23 +16,29 @@ export class EvolutionsCarShow extends React.Component {
     this.showEvolve(this.props.evolutions.chain)
   }
 
+  getId(chain) {
+    const id = chain.species.url.replace('https://pokeapi.co/api/v2/pokemon-species/', '').replace('/', '');
+    return parseInt(id)
+  }
+
   showEvolve(chain) {
     let data = []
     if (chain.species) {
-      const id = chain.species.url.replace('https://pokeapi.co/api/v2/pokemon-species/', '').replace('/', '');
+      const id = this.getId(chain)
       data.push(parseInt(id))
-    }
-    if (chain.evolves_to[0]) {
-      const id = chain.evolves_to[0].species.url.replace('https://pokeapi.co/api/v2/pokemon-species/', '').replace('/', '');
-      data.push(parseInt(id))
-
-      if (chain.evolves_to[0].evolves_to[0]) {
-        const id = chain.evolves_to[0].evolves_to[0].species.url.replace('https://pokeapi.co/api/v2/pokemon-species/', '').replace('/', '');
+      
+      if (chain.evolves_to[0]) {
+        const id = this.getId(chain.evolves_to[0])
         data.push(parseInt(id))
-
-        if (chain.evolves_to[0].evolves_to[0].evolves_to[0]) {
-          const id = chain.evolves_to[0].evolves_to[0].evolves_to[0].species.url.replace('https://pokeapi.co/api/v2/pokemon-species/', '').replace('/', '');
+  
+        if (chain.evolves_to[0].evolves_to[0]) {
+          const id = this.getId(chain.evolves_to[0].evolves_to[0])
           data.push(parseInt(id))
+  
+          if (chain.evolves_to[0].evolves_to[0].evolves_to[0]) {
+            const id = this.getId(chain.evolves_to[0].evolves_to[0].evolves_to[0])
+            data.push(parseInt(id))
+          }
         }
       }
     }
