@@ -1,0 +1,33 @@
+.evo-chain-container {
+  display: flex;
+}
+
+.evo-chain-content {
+  display: flex;
+  align-items: center;
+}
+
+.evo-chain-content a {
+  text-decoration: none;
+}
+
+.next-arrow {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.evo-chain-container .evo-chain-content:last-child .next-arrow{
+  display: none;
+}
+
+.evo-chain-card {
+  margin: 24px; 
+  text-align: center;
+  color: black;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+.evo-chain-card img {
+  width: 150px;
+}

@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import '../style/evo-chain.css'
 
 export class EvolutionsCarShow extends React.Component {
   constructor(props) {
@@ -59,12 +62,17 @@ export class EvolutionsCarShow extends React.Component {
             ): (
               <div className="evo-chain-container">
                 {pokemons.map(evo =>
-                <a href={`/pokemon/${evo.id}`}>
-                  <div className="evo-chain-card" key={evo.id}>
-                    <p>{evo.name}</p>
-                    <img src={evo.picture}/>
+                <div  key={evo.id} className="evo-chain-content">
+                  <a href={`/pokemon/${evo.id}`}>
+                    <div className="evo-chain-card">
+                      <p>{evo.name}</p>
+                      <img src={evo.picture}/>
+                    </div>
+                  </a>
+                  <div className="next-arrow">
+                    <p><FontAwesomeIcon icon={faArrowRight} /></p>
                   </div>
-                </a>
+                </div>
                 )}
               </div>
             )}
